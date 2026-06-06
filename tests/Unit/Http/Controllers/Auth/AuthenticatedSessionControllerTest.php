@@ -15,12 +15,25 @@ class AuthenticatedSessionControllerTest extends TestCase
         $this->get(route('login'))->assertOk();
     }
 
-    public function test_user_can_authenticate(): void
+    public function test_user_can_authenticate_with_email(): void
     {
         $user = User::factory()->create(['password' => 'password']);
 
         $response = $this->post(route('login'), [
-            'email' => $user->email,
+            'login' => $user->email,
+            'password' => 'password',
+        ]);
+
+        $this->assertAuthenticatedAs($user);
+        $response->assertRedirect(route('dashboard', absolute: false));
+    }
+
+    public function test_user_can_authenticate_with_username(): void
+    {
+        $user = User::factory()->create(['password' => 'password']);
+
+        $response = $this->post(route('login'), [
+            'login' => $user->username,
             'password' => 'password',
         ]);
 
@@ -33,7 +46,7 @@ class AuthenticatedSessionControllerTest extends TestCase
         $user = User::factory()->create();
 
         $this->post(route('login'), [
-            'email' => $user->email,
+            'login' => $user->email,
             'password' => 'wrong-password',
         ]);
 

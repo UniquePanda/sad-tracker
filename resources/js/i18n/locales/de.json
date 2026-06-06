@@ -2,8 +2,8 @@
     "auth": {
         "login": {
             "title": "Bei deinem Konto anmelden",
-            "description": "Gib unten deine E-Mail und dein Passwort ein, um dich anzumelden",
-            "email": "E-Mail-Adresse",
+            "description": "Gib unten deine E-Mail oder deinen Benutzernamen und dein Passwort ein, um dich anzumelden",
+            "identifier": "E-Mail oder Benutzername",
             "password": "Passwort",
             "remember": "Angemeldet bleiben",
             "submit": "Anmelden",

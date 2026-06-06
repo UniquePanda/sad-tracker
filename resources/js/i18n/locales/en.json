@@ -2,8 +2,8 @@
     "auth": {
         "login": {
             "title": "Log in to your account",
-            "description": "Enter your email and password below to log in",
-            "email": "Email address",
+            "description": "Enter your email or username and your password to log in",
+            "identifier": "Email or username",
             "password": "Password",
             "remember": "Remember me",
             "submit": "Log in",
